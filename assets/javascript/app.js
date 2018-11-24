@@ -17,8 +17,8 @@ $(document).ready(function () {
     $("#topic-buttons").on("click", ".topic-button",function () {
         // Grabbing and storing the data-animal property value from the button
         var animal = $(this).attr("data-animal");
-        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=VmaPeULXS2UBADSYjHC7xoz9Tex0k3LZ&limit=5";
-
+        var queryURL = "https://api.giphy.com/v1/gifs/search?q=" + animal + "&api_key=VmaPeULXS2UBADSYjHC7xoz9Tex0k3LZ&limit=10";
+        
         $.ajax({
             url: queryURL,
             method: "GET"
@@ -34,9 +34,17 @@ $(document).ready(function () {
                     gifButton.attr("data-still", gifStill)
                     gifButton.attr("data-animated", gifAnimated)
                     gifButtons.push(gifButton)
+                    // if (gifButton === "still") {
+                    //     $(this).attr("src", $(this).attr("data-animate"));
+                    //     $(this).attr("data-state", "animate");
+                    //   } else {
+                    //     $(this).attr("src", $(this).attr("data-still"));
+                    //     $(this).attr("data-state", "still");
+                    //   }
                 }
                 $("#gifs-here").append(gifButtons)
                 console.log(results);
+                
             })
     });
 
