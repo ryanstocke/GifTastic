@@ -12,8 +12,7 @@ $(document).ready(function () {
         }
         $("#topic-buttons").prepend(topicButtons)
     }
-
-
+    
     // Adding click event listen listener to all buttons
     
     $("#topic-buttons").on("click", ".topic-button", function () {
@@ -31,7 +30,9 @@ $(document).ready(function () {
 
                 for (var i = 0; i < gifResults.length; i++) {
                     var animalDiv = $("<div>");
-                    var p = $("<p>").text("Rating: " + gifResults[i].rating);
+                    animalDiv.addClass("gifDiv");
+                    var gifRating = $("<p>").text("Rating: " + gifResults[i].rating);
+                    animalDiv.append(gifRating);
                     var gifButton = $("<img class= 'gif-button'>")
                     var gifStill = gifResults[i].images.fixed_height_still.url
                     var gifAnimated = gifResults[i].images.fixed_height.url
@@ -39,9 +40,7 @@ $(document).ready(function () {
                     gifButton.attr("data-still", gifStill)
                     gifButton.attr("data-animated", gifAnimated)
                     gifButtons.push(gifButton)
-                    animalDiv.append(p);
-                    animalDiv.append(gifButtons);
-                    animalDiv.append(gifButtons);
+
                 }
                 $("#gifs-here").prepend(gifButtons, animalDiv)
                 console.log(results);
@@ -58,32 +57,25 @@ $(document).ready(function () {
                 });
             });
     });
-
+    addNewGif();
     showTopicButtons();
-
-    $("#submitBtn").on("click", function () {
-
-        var userInput = $("#animalUserInput").val().trim();
-
-        if (userInput === "") {
-            alert("You didn't enter an animal");
-
-            $("#animalUserInput").val("");
-            // } else if ($.inArray(userInput, topicsArray) != -1) {
-            //     alert("Animal already exists");
-
-            //     $("#animalUserInput").val("");
-        } else {
-
-            userInput = $("<button class='topic-buttons'>" + userInput + "</button><br>");
-
-            $("#topic-buttons").prepend(userInput);
-
+    
+    function addNewGif(){
+        $("#submitBtn").on("click", function(){
+            var action = $("#animalUserInput").val();
+            if (action == ""){
+              alert("You didn't enter an animal");
+              return false; // added so user cannot add a blank button
+            //   alert("You didn't enter an animal");
+            //   $("#animalUserInput").val("");
+            }
+            topicsArray.push(action);
+        
             showTopicButtons();
+            return false;
+            });
+        }
 
-            $("#animalUserInput").val("");
 
-        };
-    });
     // NO CODE BELOW THIS LINE
 });
