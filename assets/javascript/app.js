@@ -30,9 +30,9 @@ $(document).ready(function () {
 
                 for (var i = 0; i < gifResults.length; i++) {
                     var animalDiv = $("<div>");
-                    animalDiv.addClass("gifDiv");
+                    // animalDiv.addClass("gifDiv");
                     var gifRating = $("<p>").text("Rating: " + gifResults[i].rating);
-                    animalDiv.append(gifRating);
+                    // animalDiv.append(gifRating);
                     var gifButton = $("<img class= 'gif-button'>")
                     var gifStill = gifResults[i].images.fixed_height_still.url
                     var gifAnimated = gifResults[i].images.fixed_height.url
@@ -40,9 +40,11 @@ $(document).ready(function () {
                     gifButton.attr("data-still", gifStill)
                     gifButton.attr("data-animated", gifAnimated)
                     gifButtons.push(gifButton)
-
+                    animalDiv.prepend(gifRating);
+                    animalDiv.prepend(gifButton);
+                    $("#gifs-here").prepend(animalDiv)
                 }
-                $("#gifs-here").prepend(gifButtons, animalDiv)
+                
                 console.log(results);
 
                 $(".gif-button").on("click", function () {
