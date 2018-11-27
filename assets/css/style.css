@@ -1,0 +1,80 @@
+body {
+    background-image: url(../images/bulbs.jpeg);
+    /* background-repeat: no-repeat; */
+    background-size: 100% auto;
+}
+
+h1 {
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgba(49, 48, 46, 0.8);
+    text-align: center;
+}
+
+#animalUserInput {
+    border: none; 
+    text-align: center;
+    text-decoration: none;
+    font-size: 26px;
+    align-items: center;
+    margin: 0;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.user-input {
+    border: none;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    align-items: center;
+    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -15%);
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+}
+#submitBtn {
+    background-color: #4CAF50; 
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 18px;
+    align-items: center;
+    margin: 0; 
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -15%);
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+.topic-button {
+    font-size: 18px;
+    background-color: darkgrey;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#topic-buttons {
+     
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    align-items: center;
+    margin: 0;
+    position: relative;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+#gifs-here {
+    text-align: center;
+}
+
