@@ -37,6 +37,7 @@ $(document).ready(function () {
                     var gifStill = gifResults[i].images.fixed_height_still.url
                     var gifAnimated = gifResults[i].images.fixed_height.url
                     gifButton.attr("src", gifStill)
+                    gifButton.attr("data-state", "still")
                     gifButton.attr("data-still", gifStill)
                     gifButton.attr("data-animated", gifAnimated)
                     gifButtons.push(gifButton)
