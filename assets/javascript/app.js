@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    var topicsArray = ["Dogs", "Cats", "Birds", "Horses"]
+    var topicsArray = ["Dogs", "Cats", "Birds", "Horses", "Monkey", "Kangaroo"]
     // var userInputButton;
     function showTopicButtons() {
         $("#topic-buttons").empty()
@@ -12,9 +12,9 @@ $(document).ready(function () {
         }
         $("#topic-buttons").prepend(topicButtons)
     }
-    
+
     // Adding click event listen listener to all buttons
-    
+
     $("#topic-buttons").on("click", ".topic-button", function () {
         // Grabbing and storing the data-animal property value from the button
         var animal = $(this).attr("data-animal");
@@ -44,7 +44,7 @@ $(document).ready(function () {
                     animalDiv.prepend(gifButton);
                     $("#gifs-here").prepend(animalDiv)
                 }
-                
+
                 console.log(results);
 
                 $(".gif-button").on("click", function () {
@@ -61,23 +61,37 @@ $(document).ready(function () {
     });
     addNewGif();
     showTopicButtons();
-    
-    function addNewGif(){
-        $("#submitBtn").on("click", function(){
+
+    function addNewGif() {
+        $("#submitBtn").on("click", function () {
             var action = $("#animalUserInput").val();
-            if (action == ""){
-              alert("You didn't enter an animal");
-              return false; // added so user cannot add a blank button
-            //   alert("You didn't enter an animal");
-            //   $("#animalUserInput").val("");
+            if (action == "") {
+                alert("You didn't enter an animal");
+                return false; // added so user cannot add a blank button
+                //   alert("You didn't enter an animal");
+                //   $("#animalUserInput").val("");
             }
             topicsArray.push(action);
-        
+
             showTopicButtons();
             return false;
-            });
-        }
+        });
+    }
 
+    // Working on a favorites section
+
+    // $("#favorite").on("click", function (event) {
+    //     event.preventDefault();
+    //     // $("#favorites").text("");
+    //     var favorites = $("#animalUserInput").val().trim();
+    //     console.log(favorites);
+    //     $("#favorites").text(favorites)
+    //     localStorage.clear();
+    //     localStorage.setItem("favorite", favorites);
+    //     $("#favorites").text(localStorage.getItem("favorite"));
+
+    // });
+    // $("#favorites").text(localStorage.getItem("favorite"));
 
     // NO CODE BELOW THIS LINE
 });
