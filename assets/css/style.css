@@ -1,7 +1,8 @@
 body {
     background-image: url(../images/bulbs.jpeg);
-    /* background-repeat: no-repeat; */
+    background-repeat: no-repeat;
     background-size: 100% auto;
+    background-attachment: fixed;
 }
 
 h1 {
